@@ -114,16 +114,38 @@ body {
 
 
 .bulb {
-	width: 50px;
-	height: 50px;
+	width: 30px;
+	height: 30px;
 	margin: auto;
 	background-repeat: no-repeat no-repeat;
 	background-position:center 0px;
-	background-size: 50px 50px;
+	background-size: 30px 30px;
 }
 
 .bulb-holder {
-	height: 70px;
+	height: 50px;
+}
+
+@media (min-width: 600px) {
+	.bulb {
+		width: 40px;
+		height: 40px;
+		background-size: 40px 40px;
+	}
+	.bulb-holder {
+		height: 60px;
+	}
+}
+
+@media (min-width: 1025px) {
+	.bulb {
+		width: 50px;
+		height: 50px;
+		background-size: 50px 50px;
+	}
+	.bulb-holder {
+		height: 70px;
+	}
 }
 
 .bulb-glow-yellow {
@@ -1080,18 +1102,40 @@ audio {
 	bottom: -200px;
 	opacity: 0.6;
 	z-index: 99;
-	width: 100px;
-	height: 183px;
+	width: 60px;
+	height: 110px;
 	background-repeat: no-repeat no-repeat;
-	background-size: 100px 183px;
+	background-size: 60px 110px;
 }
 .balloons h2 {
 	text-transform: uppercase;
 	font-family: 'Signika', sans-serif;
-	font-size: 50px;
+	font-size: 24px;
 	color: #BF4136;
-	text-shadow: 5px 5px 5px #FFF;
+	text-shadow: 2px 2px 2px #FFF;
 	display: none;
+	margin: 5px;
+}
+@media (min-width: 600px) {
+	.balloons {
+		width: 80px;
+		height: 146px;
+		background-size: 80px 146px;
+	}
+	.balloons h2 {
+		font-size: 36px;
+	}
+}
+@media (min-width: 1025px) {
+	.balloons {
+		width: 100px;
+		height: 183px;
+		background-size: 100px 183px;
+	}
+	.balloons h2 {
+		font-size: 50px;
+		text-shadow: 5px 5px 5px #FFF;
+	}
 }
 #b1,#b11 {
 	background-image: url('b1.png');
@@ -1249,46 +1293,94 @@ audio {
 	}
 }
 
-.balloon-border{
+.balloon-border-img{
 	position: fixed;
 	top:100%;
 	opacity: 0.5;
 	z-index: 9999;
+	width: 100%;
+	height: auto;
 }
 .control-panel {
 	position: fixed;
 	bottom: 0;
 	padding:10px 0px 10px 0px;
+	width: 100%;
+	left: 0;
+	right: 0;
+	background-color: rgba(0,0,0,0.7);
+	z-index: 1000;
+}
+.button-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5px;
+	justify-content: center;
 }
 #play, #bannar_coming, #balloons_flying,#cake_fadein,#light_candle,#wish_message,#story {
 	display: none;
 }
 
 .cake-cover {
-	margin-top: 50px;
+	margin-top: 30px;
+}
+@media (min-width: 600px) {
+	.cake-cover {
+		margin-top: 40px;
+	}
+}
+@media (min-width: 1025px) {
+	.cake-cover {
+		margin-top: 50px;
+	}
 }
 .message {
-	margin-top: 200px;
+	margin-top: 100px;
 	display: none;
+	padding: 0 10px;
+	margin-bottom: 100px;
 }
 .message p {
 	font-family: 'Signika', sans-serif;
-	font-size: 30px;
+	font-size: 16px;
 	text-transform: uppercase;
 	color: #C4515C;
-	text-shadow: 2px 2px 2px #FFF;
+	text-shadow: 1px 1px 1px #FFF;
 	display: none;
 	font-weight: bold;
+	line-height: 1.4;
+}
+@media (min-width: 570px) {
+	.message {
+		margin-top: 150px;
+	}
+	.message p {
+		font-size: 20px;
+		text-shadow: 1px 1px 2px #FFF;
+	}
+}
+@media (min-width: 1025px) {
+	.message {
+		margin-top: 200px;
+	}
+	.message p {
+		font-size: 30px;
+		text-shadow: 2px 2px 2px #FFF;
+	}
 }
 
 .btn-primary {
         border-color: #466baf;
-        padding: 10px;
+        padding: 10px 8px;
         text-transform: uppercase;
         font-family: 'Signika', sans-serif;
         font-weight: 700;
         color: #fff;
         background-color: #466baf;
+        font-size: 12px;
+        min-width: 80px;
+        line-height: 1.2;
+        margin: 2px;
 }
     .btn-primary:hover,
     .btn-primary:focus,
@@ -1300,11 +1392,73 @@ audio {
         background-color: #466baf;
     }
 
+/* Tablet (portrait and landscape) */
+@media (min-width: 600px) and (max-width: 1024px) {
+	.btn-primary {
+		font-size: 13px;
+		padding: 12px 10px;
+		min-width: 90px;
+	}
+	.balloons h2 {
+		font-size: 40px;
+	}
+	.message p {
+		font-size: 22px;
+	}
+	.balloons {
+		width: 80px;
+		height: 146px;
+		background-size: 80px 146px;
+	}
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+	.btn-primary {
+		font-size: 14px;
+		padding: 10px 15px;
+		min-width: 100px;
+	}
+}
 
 
-    /*controlling tablet width*/
-    /*@media only screen and (max-width: 720px){
-    	.container {
-    		-webkit-transform: scale(0.9);
+
+    /* Mobile Optimization */
+    @media only screen and (max-width: 569px) {
+    	body {
+    		font-size: 14px;
     	}
-    }*/
+    	.container {
+    		padding-bottom: 150px;
+    	}
+    	.bannar {
+    		max-width: 90%;
+    		height: auto;
+    	}
+    	audio {
+    		width: 80%;
+    		max-width: 100%;
+    	}
+    }
+    
+    /* Tablet Optimization */
+    @media only screen and (min-width: 570px) and (max-width: 1024px) {
+    	.container {
+    		padding-bottom: 120px;
+    	}
+    	.bannar {
+    		max-width: 85%;
+    		height: auto;
+    	}
+    }
+    
+    /* Desktop Optimization */
+    @media only screen and (min-width: 1025px) {
+    	.container {
+    		padding-bottom: 100px;
+    	}
+    	.bannar {
+    		max-width: 80%;
+    		height: auto;
+    	}
+    }
